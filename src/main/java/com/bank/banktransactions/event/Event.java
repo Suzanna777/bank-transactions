@@ -1,4 +1,7 @@
 package com.bank.banktransactions.event;
 
-public class Event {
+import com.bank.banktransactions.domain.aggregate.Aggregate;
+
+public interface Event {
+    void apply(Aggregate aggregate);
 }

@@ -1,4 +1,11 @@
 package com.bank.banktransactions.domain.exception;
 
-public class ResourceAlreadyExistsException {
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+public class ResourceAlreadyExistsException extends RuntimeException {
+
+    public ResourceAlreadyExistsException(final String message) {
+        super(message);
+    }
 }

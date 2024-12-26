@@ -14,7 +14,7 @@ import java.util.UUID;
 @Entity
 @Getter
 @Setter
-
+@NoArgsConstructor
 public class Transaction {
     @Id
     @GeneratedValue

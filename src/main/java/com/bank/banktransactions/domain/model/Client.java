@@ -14,6 +14,7 @@ import java.util.UUID;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class Client {
     @Id
     @GeneratedValue
@@ -26,8 +27,11 @@ public class Client {
 
     @OneToMany
     @JoinTable(
-            joinColumns = @JoinColumn(name = "card_id"),
-            inverseJoinColumns = @JoinColumn(name = "transaction_id"))
+            joinColumns = @JoinColumn(name = "client_id"),
+            inverseJoinColumns = @JoinColumn(name = "card_id"))
     private List<Card>cards;
+
+    @OneToOne
+    private Account account;
 
 }
