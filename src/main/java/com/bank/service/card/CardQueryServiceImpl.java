@@ -15,7 +15,7 @@ public class CardQueryServiceImpl implements CardQueryService {
     private final CardRepository repository;
 
     @Override
-    public Card getByiD(final UUID id) {
+    public Card getById(final UUID id) {
         return repository.findById(id).orElseThrow(ResourceNotFoundException::new);
     }
 

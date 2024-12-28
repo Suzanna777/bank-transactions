@@ -20,7 +20,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public Account getByiD(final UUID id) {
-        return queryService.getByiD(id);
+    public Account getById(final UUID id) {
+        return queryService.getById(id);
     }
 }

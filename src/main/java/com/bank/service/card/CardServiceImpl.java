@@ -22,14 +22,14 @@ public class CardServiceImpl implements CardService{
     }
 
     @Override
-    public Card getByiD(final UUID id) {
-        return queryService.getByiD(id);
+    public Card getById(final UUID id) {
+        return queryService.getById(id);
     }
 
 
     @Override
     public void createByClientId(final UUID clientId) {
-        Client client = clientService.getByiD(clientId);
+        Client client = clientService.getById(clientId);
         Card card = new Card(client.getAccount());
         commandService.create(card);
     }

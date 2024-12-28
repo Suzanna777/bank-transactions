@@ -19,8 +19,8 @@ public class TransactionServiceImpl implements TransactionService{
         commandService.create(object);
     }
     @Override
-    public Transaction getByiD(final UUID id) {
-        return queryService.getByiD(id);
+    public Transaction getById(final UUID id) {
+        return queryService.getById(id);
     }
 
 

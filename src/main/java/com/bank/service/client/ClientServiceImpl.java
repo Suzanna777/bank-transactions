@@ -18,8 +18,8 @@ public class ClientServiceImpl implements ClientService{
     }
 
     @Override
-    public Client getByiD(final UUID id) {
-        return queryService.getByiD(id);
+    public Client getById(final UUID id) {
+        return queryService.getById(id);
     }
 
     @Override

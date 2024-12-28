@@ -15,7 +15,7 @@ public class AccountQueryServiceImpl implements AccountQueryService{
     private final AccountRepository repository;
 
     @Override
-    public Account getByiD(final UUID id) {
+    public Account getById(final UUID id) {
         return repository.findById(id).orElseThrow(ResourceNotFoundException::new);
     }
 }

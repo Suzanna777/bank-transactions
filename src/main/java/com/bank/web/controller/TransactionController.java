@@ -15,6 +15,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/v1/transactions")
 @RequiredArgsConstructor
+@Validated
 public class TransactionController {
 
     private final TransactionService transactionService;
@@ -22,7 +23,7 @@ public class TransactionController {
     private final TransactionMapper transactionMapper;
 
     @PostMapping
-    public void create(@RequestBody @Validated(OnCreate.class) final TransactionDto dto){
+    public void create(@RequestBody @Validated(OnCreate.class) TransactionDto dto){
 
         if (!cardService.existsByNumberAndDate(dto.getTo().getNumber(), dto.getTo().getDate())){
             throw  new IllegalStateException("card does not exist");
@@ -32,8 +33,8 @@ public class TransactionController {
     }
 
     @GetMapping("/{id}")
-    public TransactionDto getById(@PathVariable final UUID id){
-       Transaction transaction = transactionService.getByiD(id);
+    public TransactionDto getById(@PathVariable  UUID id){
+       Transaction transaction = transactionService.getById(id);
        return transactionMapper.toDto(transaction);
 
     }

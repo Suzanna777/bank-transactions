@@ -15,7 +15,7 @@ public class MessageDto {
     private String message;
     private Map<String, String> errors;
 
-    public MessageDto(String message){
+    public MessageDto(final String message){
         this.message = message;
         this.errors = new HashMap<>();
 
